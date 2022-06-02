@@ -1,0 +1,22 @@
+{% extends "Entrada.html" %}
+
+{% block Entrada %}
+<div class="contenido">
+   <!--Formulario edidicon-->
+
+   <a href="../portada.php "><button>Volver</button></a>
+
+   <form class="aniadir" action="/aniadirProducto.php" method="POST">
+      <label for="Nombre">Nombre</label><br>
+      <input type="text" id="Nombre" name="nuevonombre"><br>
+      <label for="Descripcion">Descripcion</label><br>
+      <textarea  id="Descripcion" name="nuevadescripcion" ></textarea>
+      <label for="Imagen1">Imagen1</label><br>
+      SRC: <textarea  id="Imagen1" name="nuevoImagen1" ></textarea>
+      <label for="Imagen2">Imagen2</label><br>
+      SRC: <textarea  id="Imagen2" name="nuevoImagen2" ></textarea>
+  
+      <input id="addEvento" type="submit" name="nuevoProducto" value="Añadir Evento">
+   </form>
+</div>
+{% endblock %}

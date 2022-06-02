@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<head>
+   <meta charset='utf-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <title>BIENES Y RAICES</title>
+   <meta name='viewport' content='width=device-width, initial-scale=1'>
+   <link rel='stylesheet' type='text/css' media='screen' href='static/css/portada.css'>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;557&family=Exo:wght@100&family=Inspiration&family=Playfair+Display:ital,wght@1,500&family=Quicksand:wght@300&family=Roboto:ital,wght@1,100&family=Space+Mono&display=swap"
+      rel="stylesheet">
+   <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<!--TODO LA WEB-->
+
+<body>
+   <!--CLASE HEADER, QUE CONTIENE EL LOGO, EL TIITULO Y EL MENU-->
+
+   <div class="header">
+      <!--CLASE QUE CONTIENE EL LOGO-->
+      <div class="container-logo">
+         <a href="../portada.php"><img class="logo" src="../static/image/logo.png" width="100%" /></a>
+      </div>
+      <!--CLASE QUE CONTIENE EL TITULO Y EL MENÚ-->
+      <div class="cont_title_menu">
+         <div class="title">
+            <span>
+               MS LUXURY STATE
+            </span>
+            <div class="material-symbols-outlined">
+               <a href="../editarCuenta.php"> account_circle</a>
+            </div>
+         </div>
+         <!--CLASE QUE CONTIENE EL MENÚ, EN EL QUE CADA APARTADO ES UN ENLACE-->
+         <div class="menu">
+            <nav>
+               <!--Para crear listas-->
+               <li>
+                  <a href="../producto.php?ev=1"> VENTA</a>
+               </li>
+               <li>
+                  <a href="../producto.php"> ALQUILER</a>
+               </li>
+               <li>
+                  <a href="../producto.php"> SOBRE NOSOTROS</a>
+               </li>
+               <li>
+                  CONTACTO
+               </li>
+               <li>
+                  {%if Tipo != 'anonimo' %}
+                  <a href="../logout.php"> CERRAR SESION</a>
+                  {% endif %}
+               </li>
+            </nav>
+         </div>
+
+      </div>
+   </div>
+   {% block cuerpo %}
+   <!--CLASE CUERPO, QUE CONTIENE LAS IMAGENES DE LOS PRODUCTOS-->
+   <div class="cuerpo">
+      <div class="productos">
+      {% for producto in productos %}
+         {% if producto['Publicado'] == 1 %}
+         <a href="../producto.php?ev={{producto['ID']}}"> <img class="imgProducto" src="{{ producto['Imagen1'] }}" align="center" vspace=1% hspace=1% width="30%" /></a>
+         {% elseif Usuario['Tipo'] == 'Gestor' or Usuario['Tipo'] == 'Superusuario'%}
+         <a href="../producto.php?ev={{producto['ID']}}"> <img class="imgProducto" src="{{ producto['Imagen1'] }}" align="center" vspace=1% hspace=1% width="30%" /></a>
+         {% endif %}
+      {% endfor %}
+      </div>
+      <!--CLASE QUE CONTIENE EL SUBMENU EN EL QUE SE ENCUENTRAN ELEMENTOS AUXILIARES-->
+      <div class="submenu-izda">
+         <a href="https://casasinhaus.com/properties/casa-modular-hormigon-modelo-estepona-4d-2p-2-216/"><img
+               class="logoinhouse" src="../static/image/inhaus.svg" align="center" vspace="2%" /> </a>
+         <br>
+         <a href="https://www.facebook.com/sharer/sharer.php?u=url&t=titulo"><img class="facebook"
+               src="../static/image/facebook.png" style="height: 10%; margin-top: 6cm;"> </a>
+         <br>
+         <a href="https://twitter.com/intent/tweet?text=titulo&url=url&via=user"><img class="facebook"
+               src="../static/image/twitter.png" style="height: 10%; margin-top: 6cm;"></a>
+      </div>
+   </div>
+   {% endblock %}
+   <!--CLASE QUE CONTIENE EL PIE DE PÁGINA-->
+   {% block footer%}
+   <div class="piepagina">
+      <li>
+         <span><a
+               href="https://www.google.com/maps/place/Helader%C3%ADa+Los+Italianos/@37.176212,-3.5976216,15z/data=!4m5!3m4!1s0x0:0x2471971a4064d4e1!8m2!3d37.176212!4d-3.5976216">
+               C. Gran Vía de Colón, 4, 18010 Granada</a>
+      </li>
+      </span>
+      <li><span>Telefono: 123456789</span></li>
+      <br>
+      &copy; Manuel Sánchez Jiménez
+      <br>
+
+      <br />
+      {% endblock %}
+
+</body>
+
+</html>

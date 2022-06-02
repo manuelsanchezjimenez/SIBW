@@ -1,0 +1,123 @@
+.header
+{
+   width:100%;
+   height:auto;
+   display:flex;
+   
+   background-color: rgb(255, 255, 255);
+}
+.container-logo{
+   width:15%;
+   height: auto;
+   background-color: rgb(212, 211, 211);
+   text-align: right;
+}
+.cont_title_menu
+{
+   margin-top: 3%;
+   width:85%;
+   height:auto;
+}
+.title{
+   
+   width:auto;
+   height:75%;
+   border: 5px red;
+   font-size: 100px;
+   font-family: 'Dancing Script', cursive;
+   font-family: 'Exo', sans-serif;
+   font-family: 'Inspiration', cursive;
+   font-family: 'Playfair Display', serif;
+   font-family: 'Quicksand', sans-serif;
+   text-align: center;
+}
+.menu
+{
+   display: none;
+   width:100vw;
+   height:25%;
+   font-size: 20px;
+   font-family: 'Quicksand', sans-serif;
+   color:aliceblue;
+   background-color: rgb(28, 33, 50);
+}
+.cuerpo
+{
+   display: flex;
+   height: auto;
+   background-color: rgb(255, 255, 255);
+   width: 100vw;
+   
+}
+.productos{
+   height: auto;
+   display: flex;
+   width: 95vw;
+   text-align: center;
+   text-align: justify;
+}
+.submenu-izda
+{
+   display: none;
+   width: 5vw;
+   height: auto;
+   text-align: center;
+   background-color: rgb(255, 198, 9);
+}
+.imagenes
+{
+   height: auto;
+   width: 30vw;
+   text-align: right;
+}
+.descripcion
+{
+   height: auto;
+   width: 70vw;
+   color: rgb(0, 0, 0);
+   margin-left: 0.3cm;
+   text-align: center;
+   font-family: 'Exo', sans-serif;
+   font-family: 'Playfair Display', serif;
+   font-family: 'Quicksand', sans-serif;
+   font-family: 'Space Mono', monospace;
+   font-size: 0.5cm;
+   text-align: justify;
+}
+.TituloPropiedad
+{
+   height: auto;
+   width: 100vw;
+   text-align: center;
+   font-family: 'Exo', sans-serif;
+   font-family: 'Playfair Display', serif;
+   font-family: 'Quicksand', sans-serif;
+   font-family: 'Space Mono', monospace;
+   background-color: rgb(255, 255, 255);
+   color: rgb(0, 0, 0);
+   font-size: 3cm;
+}
+.piepagina
+{
+   height: auto;
+   width: 100%;
+   font-family: 'Quicksand', sans-serif;
+   background-color: rgb(255, 255, 255);
+   font-size: 40px;
+   border-color: black;
+   text-align: center;
+   color:rgb(0, 0, 0);
+   
+}
+li{
+   list-style: none;
+   
+   margin-right: 30px;
+   float: left;
+}
+nav{
+   margin-left: 300px;
+}
+a{
+   color:rgb(0, 0, 0);
+}

@@ -1,0 +1,73 @@
+{% extends "padre.html" %}
+
+{%block palabrasProhibidas %}
+{% for palabra in palabrasOcultas %}
+<div class="palabrasProhibidas" id="{{palabra}}"></div>
+{% endfor %}
+{% endblock %}
+{% block tituloPropiedad%}
+{{ evento['Nombre'] }}
+{% endblock %}
+
+{% block descripcion %}
+{{ evento['Descripcion'] }}
+{% if usuario['Tipo']=='Superusuario' or usuario['Tipo']=='Gestor'%}
+
+<form action="/producto.php" method="post">
+   <input type="hidden" name="editarevento" value="{{ evento['ID'] }}">
+   <button><img id="botonEditar" src="../static/image/editar.png" vspace="1%" hspace="1%" height="50%" /></button>
+</form>
+<form action="/producto.php" method="post">
+   <input type="hidden" name="eliminarevento" value="{{ evento['ID'] }}">
+   <button><img id="botonEditar" src="../static/image/delete.png" vspace="1%" hspace="1%" height="50%" /></button>
+</form>
+{% endif %}
+{% endblock %}
+
+{% block imagenes %}
+<img class="producto1" src="{{evento['Imagen1']}}" vspace="1%" hspace="1%" width="95%" height="30%" />
+<img class="producto1" src="{{evento['Imagen2']}}" vspace="1%" hspace="1%" width="95%" height="30%" />
+{% endblock %}
+
+{%block comentario1 %}
+{% for comentario in comentarios %}
+
+<div class="comentario" id="comentario2">
+   {% if usuario['Tipo'] != 'Registrado' %}
+   <div class="editar">
+      <form action="../producto.php" method="post">
+         <input type="hidden" name="editarcomentario" value="{{ comentario['IDcomentarios'] }}">
+         <button><img id="botonEditar" src="../static/image/editar.png" vspace="1%" hspace="1%" height="50%" /></button>
+      </form>
+      <form action="../producto.php" method="post">
+         <input type="hidden" name="eliminarcomentario" value="{{ comentario['IDcomentarios'] }}">
+         <button><img id="botonEditar" src="../static/image/delete.png" vspace="1%" hspace="1%" height="50%" /></button>
+      </form>
+   </div>
+   {% endif %}
+   <h3>{{comentario['Fecha']}} | {{comentario['Hora']}} </h3>
+   <p>{{comentario['Nombre']}} | {{comentario['Correo']}}</p>
+   <p>{{comentario['Descripcion']}}</p>
+   {% if comentario['Modificado'] == 1 %}
+   <h2>Mensaje editado por el moderador</h2>
+   {% endif %}
+</div>
+{%endfor%}
+
+{%endblock%}
+
+{% block formulario %}
+{% if usuario['Tipo']=='Superusuario' or usuario['Tipo']=='Gestor' or usuario['Tipo']=='Registrado' or usuario['Tipo']=='Moderador' %}
+<form id="formulario" action="/producto.php" method="post">
+   <ul>
+      <li>
+         <label for="msg">Mensaje:</label>
+         <textarea id="msg" name="msg" onkeypress="sustituirPalabras()"></textarea>
+      </li>
+      <input type="hidden" name="idEvento" value="{{ evento['ID'] }}">
+      <input id="enviarComentario" type="submit" name="nuevocomentario" value="Enviar">
+   </ul>
+</form>
+{% endif %}
+
+{% endblock %}

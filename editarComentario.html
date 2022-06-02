@@ -1,0 +1,62 @@
+{% extends "Entrada.html" %}
+
+{% block Entrada %}
+<div class="contenido">
+   <!--Formulario edidicon-->
+
+   <form  action="/editarComentario.php" method="post">
+       <input type="hidden" name="IDproductos" value="{{comentario['IDproductos'] }}">
+       <input id="botonvolver" type="submit" name="volver" value="Volver">
+   </form>
+   
+   <form class="edicion" action="/editarComentario.php" method="POST">
+       <div class="fila">
+           <div class="formulario">
+               <!--Etiqueta Nombre input-->
+               <label for="nombre">Nombre</label><br>
+               <input type="text" id="nombre" name="nuevonombre" value="{{ comentario['Nombre'] }}"><br>
+           </div>
+           <div class="botones">
+               <!--Boton Cancelar-->
+               <input id="cambio" type="submit" name="cancelar" value="Cancelar" />
+               <!--Boton Guardar-->
+               <input type="hidden" name="IDcomentarios" value="{{ comentario['IDcomentarios'] }}">
+               <input id="guardar" type="submit" name="guardarNombre" value="Guardar" />
+           </div>
+       </div>
+
+       <div class="fila">
+           <div  class="formulario">
+               <!--Etiqueta Email input-->
+               <label for="emailInput">Email</label><br>
+               <input type="text" id="apellidosnput" name="nuevoemail" value="{{ comentario['Correo'] }}"><br>
+           </div>
+           <div class="botones">
+               <!--Boton Cancelar-->
+               <input id="cambio" type="submit" name="cancelar" value="Cancelar" />
+               <!--Boton Guardar-->
+               <input type="hidden" name="IDcomentarios" value="{{ comentario['IDcomentarios'] }}">
+               <input id="guardar" type="submit" name="guardarEmail" value="Guardar" />
+              
+           </div>
+       </div>
+
+
+       <div class="fila">
+           <div  class="formulario">
+               <!--Etiqueta Texto input-->
+               <label for="textoInput">Comentario</label><br>
+               <textarea  id="textoInput" name="nuevotexto">{{ comentario['Descripcion'] }}</textarea>
+           </div>
+           <div class="botones">
+               <!--Boton Cancelar-->
+               <input id="cambio" type="submit" name="cancelar" value="Cancelar" />
+               <!--Boton Guardar-->
+               <input type="hidden" name="idcomentario" value="{{ comentario['IDcomentarios'] }}">
+               <input id="guardar" type="submit" name="guardarTexto" value="Guardar" />
+           </div>
+       </div>
+
+   </form>
+</div>
+{% endblock %}

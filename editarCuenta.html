@@ -1,0 +1,101 @@
+{% extends "Entrada.html" %}
+{% block Entrada %}
+
+{% if edicion==1 %}
+   {% if error== 1%}
+      <p>ERROR AL MODIDICAR</p>
+   {% endif %}
+   {% if error==0%}
+      <p>Cambios realizados correctamente</p>
+   {% endif %}
+<div class="cambioCuenta">
+   <h1>Cambio de datos en Usuario</h1>
+   <form action="../editarCuenta.php" method="post">
+      <div class="fila">
+         <div class="Cambios">
+            <label for="Usuario">Usuario: </label><br>
+            <input type="text" id="Usuario" name="nuevoUsuario" value="{{usuario['Usuario'] }}"><br>
+         </div>
+         <div class="botones">
+            <input id="cancelar" type="submit" name="cancelar" value="Cancelar" />
+            <input id="guargar" type="submit" name="guardarUsuario" value="Guardar" />
+         </div>
+      </div>
+      <div class="fila">
+         <div class="Cambios">
+            <label for="Nombre">Nombre</label><br>
+            <input type="text" id="Nombre" name="nuevoNombre" value="{{ usuario['Nombre'] }}"><br>
+         </div>
+         <div class="botones">
+            <input id="cancelar" type="submit" name="cancelar" value="Cancelar" />
+            <input id="guardar" type="submit" name="guardarNombre" value="Guardar" />
+         </div>
+      </div>
+      <div class="fila">
+         <div class="formulario">
+            <label for="Apellidos">Apellidos</label><br>
+            <input type="text" id="Apellidos" name="nuevoApellidos" value="{{ usuario['Apellidos'] }}"><br>
+         </div>
+         <div class="botones">
+            <input id="cancelar" type="submit" name="cancelar" value="Cancelar" />
+            <input id="guardar" type="submit" name="guardarApellidos" value="Guardar" />
+
+         </div>
+      </div>
+      <div class="fila">
+         <div class="formulario">
+            <label for="Email">Email</label><br>
+            <input type="text" id="Email" name="nuevoEmail" value="{{ usuario['Email'] }}"><br>
+         </div>
+         <div class="botones">
+            <input id="cancelar" type="submit" name="cancelar" value="Cancelar" />
+            <input id="guardar" type="submit" name="guardarEmail" value="Guardar" />
+
+         </div>
+      </div>
+      <div class="fila">
+         <div class="formulario">
+            <label for="passwordInput">Nueva Contraseña</label><br>
+            <input type="password" id="Contrasela" name="nuevaContraseña" value="" /><br>
+         </div>
+         <div class="botones">
+            <input id="cancelaredicion" type="submit" name="cancelar" value="Cancelar" />
+            <input id="guardaredicion" type="submit" name="guardarContraseña" value="Guardar" />
+
+         </div>
+      </div>
+   </form>
+</div>
+{% else %}
+<div class="micuenta">
+   <!--Informacion de la cuenta-->
+   <a HREF="../editarCuenta.php/?edicion"><button type="button" id="editarcuenta">Editar</button></a>
+   <a HREF="../portada.php"><button type="button" id="Atras">Atras</button></a>
+   <h1>Mis datos</h1>
+   <h3>Usuario</h3>
+   <p>{{ usuario['Usuario'] }}</p>
+   <h3>Nombre</h3>
+   <p>{{ usuario['Nombre'] }}</p>
+   <h3>Apellidos</h3>
+   <p>{{ usuario['Apellidos'] }}</p>
+   <h3>Correo electrónico</h3>
+   <p>{{ usuario['Mail'] }}</p>
+   <h3>Tipo de usuario</h3>
+   <p>{{ usuario['Tipo'] }}</p>
+   {% if usuario['Tipo'] == "Gestor" %}
+   <h3><a href="../aniadirProducto.php"><button type="button" id="aniadirProducto">Añadir producto</button> </h3>
+   <h3><a href="../listaProductos.php"><button type="button" id="listaProducto">Añadir producto</button> </h3>
+      {%endif%}
+      {% if usuario['Tipo'] == "Moderador" %}
+   <h3><a href="../listaComentarios.php"><button type="button" id="listaProducto">Listar comentarios</button> </h3>
+      {%endif%}
+   {% if usuario['Tipo'] == "Superusuario" %}
+   <h3><a href="../editarUsuarios.php"><button type="button" id="listarUsuarios">editar roles</button> </h3>
+   <h3><a href="../aniadirProducto.php"><button type="button" id="aniadirProducto">Añadir producto</button> </h3>
+   <h3><a href="../listaProductos.php"><button type="button" id="listaProducto">Lista productos</button> </h3>
+   <h3><a href="../listaComentarios.php"><button type="button" id="listaProducto">Listar comentarios</button> </h3>
+   {% endif %}
+
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "Entrada.html" %}
+{% block CSS %}
+<link rel='stylesheet' type='text/css' media='screen' href='../static/css/listas.css'>
+{% endblock %}
+{% block Entrada %}
+<a HREF="../portada.php"><button type="button" id="Atras">Atras</button></a>
+<div class="usuario">
+   <div class="parte">
+      {% for comentario in comentarios %}
+      <div class="lista1">
+         <p>ID: {{ comentario['IDcomentarios']}}          |         Nombre: {{comentario['Nombre']}}     |        Fecha: {{comentario['Fecha']}} |     Descripcion: {{comentario['Descripcion']}}</p>
+         <br/>
+      </div>
+
+      {% endfor %}
+   </div>
+</div>
+
+{% endblock %}

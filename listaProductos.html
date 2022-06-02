@@ -1,0 +1,20 @@
+{% extends "Entrada.html" %}
+{% block CSS %}
+<link rel='stylesheet' type='text/css' media='screen' href='../static/css/listas.css'>
+{% endblock %}
+
+{% block Entrada %}
+<a HREF="../portada.php"><button type="button" id="Atras">Atras</button></a>
+<div class="usuario">
+   <div class="parte">
+      {% for producto in productos %}
+      <div class="lista1">
+         <h3>ID: {{ producto['ID']}}          |         Nombre: {{producto['Nombre']}}</h3>
+         <br/>
+      </div>
+
+      {% endfor %}
+   </div>
+</div>
+
+{% endblock %}

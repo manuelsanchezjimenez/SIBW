@@ -1,0 +1,12 @@
+{% extends "Entrada.html" %}
+{% block Entrada %}
+<div class="Logearse">
+   <h1>Login</h1>
+   <form action="../login.php" method="post">
+       Nombre de usuario: <input type="text" style="color: #000" name="Usuario"/><br><br>
+       Contraseña: <input type="password" style="color: #000" name="Contraseña"/><br><br>
+       <input type="submit" id="boton_comentarios" value="Entrar" />
+   </form>
+   <a href="../Entrada.php"><button name="button">Cancelar</button></a> 
+</div>
+{% endblock %}

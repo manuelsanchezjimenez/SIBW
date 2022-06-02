@@ -1,0 +1,26 @@
+{% extends "Entrada.html" %}
+
+{% block Entrada %}
+
+<div class="usuario">
+   <div class="parte">
+      <div class="editar">
+
+         <form action="../editarRolUsuarios.php" method="post">
+            <a HREF="../portada.php"><button type="button" id="Atras">Atras</button></a>
+            <h1> Usuario: {{ usuario['Usuario'] }} </h1><br>
+                <h3>Nombre: {{ usuario['Nombre'] }}</h3>
+                <h3>Apellidos: {{ usuario['Apellidos'] }}</h3>
+                <h3>Mail: {{ usuario['Mail'] }}</h3>
+                <h3>Tipo: {{ usuario['Tipo'] }}</h3>
+                <input type="hidden" name="editarpermisosusuario" value="{{ usuario['Usuario'] }}">
+                <input id="changeRegistrado" type="submit" name="changeRegistrado" value="Cambiar a Registrado" />
+                <input id="changeModerador" type="submit" name="changeModerador" value="Cambiar a Moderador" />
+                <input id="changeGestor" type="submit" name="changeGestor" value="Cambiar a Gestor" />
+                <input id="changeSuperusuario" type="submit" name="changeSuperusuario" value="Cambiar a Superusuario" />
+         </form>
+      </div>
+   </div>
+</div>
+
+{% endblock %}

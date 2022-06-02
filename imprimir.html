@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+   <meta charset='utf-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <title>BIENES Y RAICES</title>
+   <meta name='viewport' content='width=device-width, initial-scale=1'>
+   <link rel='stylesheet' type='text/css' media='screen' href='static/css/imprimir.css'>
+   <link rel="preconnect" href="https://fonts.googleapis.com"> 
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;557&family=Exo:wght@100&family=Inspiration&family=Playfair+Display:ital,wght@1,500&family=Quicksand:wght@300&family=Roboto:ital,wght@1,100&family=Space+Mono&display=swap" rel="stylesheet">  
+
+</head>
+<body>
+   <!--CLASE HEADER, QUE CONTIENE EL LOGO, EL TIITULO Y EL MENU-->
+   <div class="header">
+      
+      <!--CLASE QUE CONTIENE EL TITULO Y EL MENÚ-->
+      <div class="cont_title_menu">
+         <div class="title">
+            <span>
+               MS LUXURY STATE
+            </span>
+         </div>
+         <!--CLASE QUE CONTIENE EL MENÚ, EN EL QUE CADA APARTADO ES UN ENLACE-->
+         <div class="menu">
+            <nav> <!--Para crear listas-->
+               <li>
+                  <a href="../templates/producto.html"> VENTA</a>
+               </li>
+               <li>
+                  <a href="../templates/producto.html"> ALQUILER</a>
+               </li>
+               <li>
+                  <a href="../templates/producto.htmll"> SOBRE NOSOTROS</a>
+               </li>
+               <li>
+                  CONTACTO
+               </li>
+            </nav>
+         </div>
+         
+      </div>
+      <!--CLASE QUE CONTIENE EL LOGO-->
+      <div class="container-logo">
+         <a href="/index.php"><img class="logo" src="../static/image/logo.png" width="100%" height="100%"/></a>
+      </div>
+   </div>
+   <div class="TituloPropiedad">
+      {{ evento['Nombre'] }}
+   </div>
+
+   <div class="cuerpo"> 
+      <div class="productos">
+         <div class="descripcion">
+            {{evento['Descripcion']}}
+         </div>
+         <div class="imagenes">
+            <img class="producto1" src="{{evento['Imagen1']}}" vspace=1% hspace=1% width="100%" height="30%"/>
+            <img class="producto1" src="{{evento['Imagen2']}}" vspace=1% hspace=1% width="100%" height="30%"/>
+         </div>
+      </div>
+       <div class="submenu-izda">
+         <a href="https://casasinhaus.com/properties/casa-modular-hormigon-modelo-estepona-4d-2p-2-216/"><img class="logoinhouse" src="../static/image/inhaus.svg" style="margin-top:3cm ;"/> </a> 
+         <a href="https://www.google.es/maps/place/29680+Estepona,+Málaga/@36.424155,-5.1588193,15z/data=!3m1!4b1!4m5!3m4!1s0xd0cd6a591f6d9d3:0x8a4bf0c5d62d0dcc!8m2!3d36.4256345!4d-5.1510261?hl=es"><img class="logoinhouse" src="../static/image/maps.jpg" style="margin-top: 6cm;" width="300vw" height="300vw"/> </a> 
+         <a href="/imprimir.php/ev=1"> IMPRIMIR</a>
+      </div>
+   </div>
+
+   </div>
+   <div class="piepagina">
+      <li>
+         <span><a href="https://www.google.com/maps/place/Helader%C3%ADa+Los+Italianos/@37.176212,-3.5976216,15z/data=!4m5!3m4!1s0x0:0x2471971a4064d4e1!8m2!3d37.176212!4d-3.5976216"> C. Gran Vía de Colón, 4, 18010 Granada</a></li>
+      </span>
+      <li><span>Telefono: 123456789</span></li>
+      <br>
+      &copy; Manuel Sánchez Jiménez
+   </div>
+   
+</body>
+</html>

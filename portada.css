@@ -1,0 +1,89 @@
+.header {
+   width: 100%;
+   height: 15vw;
+   display: flex;
+
+   background-color: rgb(28, 33, 50);
+}
+
+.container-logo {
+   width: 15%;
+   height: auto;
+   background-color: rgb(28, 33, 50);
+}
+
+.cont_title_menu {
+   text-align: center;
+   width: 85%;
+   height: auto;
+}
+
+.title {
+
+   width: auto;
+   height: 75%;
+   border: 5px red;
+   font-size: 100px;
+   background-color: rgb(184, 226, 245);
+   font-family: 'Dancing Script', cursive;
+   font-family: 'Exo', sans-serif;
+   font-family: 'Inspiration', cursive;
+   font-family: 'Playfair Display', serif;
+   font-family: 'Quicksand', sans-serif;
+   text-align: center;
+}
+
+.menu {
+   width: auto;
+   height: 25%;
+   font-size: 20px;
+   font-family: 'Quicksand', sans-serif;
+   color: aliceblue;
+   background-color: rgb(28, 33, 50);
+}
+.cuerpo {
+   display: flex;
+   height: 80vw;
+   width: 100%;
+
+}
+
+.productos {
+   height: auto;
+   width: 100vw;
+   text-align: center;
+   background-color: rgb(28, 33, 50);
+}
+
+.submenu-izda {
+   text-align: justify;
+   width: 25vw;
+   height: auto;
+   text-align: center;
+   background-color: rgb(255, 198, 9);
+}
+
+.piepagina {
+   height: auto;
+   width: 100%;
+   border: solid 1px rgb(0, 174, 255);
+   font-family: 'Quicksand', sans-serif;
+   background-color: rgb(13, 75, 104);
+   font-size: 40px;
+   text-align: center;
+   color: rgb(255, 198, 9);
+}
+
+li {
+   list-style: none;
+   margin-right: 30px;
+   float: left;
+}
+
+nav {
+   margin-left: 300px;
+}
+
+a {
+   color: rgb(255, 198, 9);
+}

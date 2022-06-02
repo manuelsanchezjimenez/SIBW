@@ -1,0 +1,201 @@
+.header
+{
+   width:100%;
+   height:auto;
+   display:flex;
+   
+   background-color: rgb(28, 33, 50);
+}
+.container-logo{
+   width:15%;
+   height: auto;
+   background-color: rgb(28, 33, 50);
+}
+.cont_title_menu
+{
+   width:85%;
+   height:auto;
+}
+.palabrasProhibidas{
+   display: none;
+}
+.title{
+   
+   width:auto;
+   height:75%;
+   border: 5px red;
+   font-size: 100px;
+   background-color: rgb(169, 223, 248);
+   font-family: 'Dancing Script', cursive;
+   font-family: 'Exo', sans-serif;
+   font-family: 'Inspiration', cursive;
+   font-family: 'Playfair Display', serif;
+   font-family: 'Quicksand', sans-serif;
+   text-align: center;
+}
+.menu
+{
+   width:auto;
+   height:25%;
+   font-size: 20px;
+   font-family: 'Quicksand', sans-serif;
+   color:rgb(255, 198, 9);
+   background-color: rgb(28, 33, 50);
+   text-align: center;
+}
+.cuerpo
+{
+   display: flex;
+   width: 100%;
+   height: auto;
+   background-color: rgb(28, 33, 50);
+   width: 100vw;
+   
+}
+.productos{
+   height: auto;
+   display: flex;
+   width: 70%;
+   text-align: center;
+   text-align: justify;
+}
+.submenu-izda
+{
+   width: 30%;
+   height: auto;
+   text-align: center;
+   background-color: rgb(255, 198, 9);
+}
+.imagenes
+{
+   text-align: center;
+   height: auto;
+   width: 30%;
+}
+.descripcion
+{
+   height: auto;
+   width: 65%;
+   color: aliceblue;
+   margin-left: 0.3cm;
+   text-align: center;
+   font-family: 'Exo', sans-serif;
+   font-family: 'Playfair Display', serif;
+   font-family: 'Quicksand', sans-serif;
+   font-family: 'Space Mono', monospace;
+   font-size: 0.5cm;
+   text-align: justify;
+}
+.TituloPropiedad
+{
+   height: auto;
+   width: auto;
+   text-align: center;
+   font-family: 'Exo', sans-serif;
+   font-family: 'Playfair Display', serif;
+   font-family: 'Quicksand', sans-serif;
+   font-family: 'Space Mono', monospace;
+   background-color: rgb(28, 33, 50);
+   color: rgb(255, 198, 9);
+   font-size: 3cm;
+}
+.piepagina
+{
+   border: solid 5px rgb(0, 174, 255);
+   height: auto;
+   width: auto;
+   font-family: 'Quicksand', sans-serif;
+   background-color: rgb(28, 33, 50);
+   font-size: 40px;
+   text-align: center;
+   color:rgb(255, 198, 9);
+   
+}
+li{
+   list-style: none;
+   
+   margin-right: 30px;
+   float: left;
+}
+nav{
+   margin-left: 300px;
+}
+a{
+   color:rgb(255, 198, 9);
+}
+
+
+form {
+   /* Centro el formulario  */
+   margin: 0 auto;
+   width: 600px;
+   padding: 1em;
+   
+}
+
+.comentario {
+   border-style: solid;
+   border-width: 1.5px;
+   border-color: #fbd529;
+   background-color: rgb(97, 148, 193);
+   color: #000;
+   margin-top: 5%;
+   margin-bottom: 5%;
+   padding-left: 1%;
+   padding-right: 1%;
+}
+
+form li+li {
+   margin-top: 1em;
+}
+
+label {
+   display: inline-block;
+   width: 90px;
+   text-align: right;
+}
+.material-symbols-outlined {
+   display: block;
+   font-variation-settings:
+  'FILL' 0,
+  'wght' 800,
+  'GRAD' 0,
+  'opsz' 48
+
+}
+input,
+textarea {
+   /* Así nos asegurmos de que los campos de texto tienen la misma disposición, letra ...*/
+   font: 30px sans-serif;
+
+   /* Tamaño uniforme del campo de texto */
+   width: 600px;
+   box-sizing: border-box;
+   border: 1px solid #999;
+
+}
+
+input:focus,
+textarea:focus {
+   border-color: #000;
+}
+
+textarea {
+   vertical-align: top;
+   height: 5em;
+}
+
+.button {
+   /* Alinear los botones con los campos de texto */
+   padding-left: 90px;
+}
+
+
+#seccionComentarios
+{
+   display: none;
+}
+.comentarios {
+   display: none;
+}
+

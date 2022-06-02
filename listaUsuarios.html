@@ -1,0 +1,22 @@
+{% extends "Entrada.html" %}
+{% block CSS %}
+<link rel='stylesheet' type='text/css' media='screen' href='../static/css/listaUsuarios.css'>
+{% endblock %}
+{% block Entrada %}
+{% for user in usuarios %}
+<div class="usuario">
+   <div class="parte">
+      <h1>Usuario: {{ user['Usuario'] }}        </h1>
+      <div class="editar">
+         <form action="../editarUsuarios.php" method="post">
+            <input type="hidden" name="editarpermisosusuario" value="{{ user['Usuario'] }}">
+            <input id="botonEditar" type="image" src="../static/image/editar.png" style="width: 10% ">
+         </form>
+      </div>
+   </div>
+
+   <h2>     -  Nombre: {{ user['Nombre'] }}          - Apellidos: {{ user['Apellidos'] }}          - Mail: {{ user['Mail'] }}      - Tipo: {{ user['Tipo'] }}</h2>
+
+</div>
+{% endfor %}
+{% endblock %}

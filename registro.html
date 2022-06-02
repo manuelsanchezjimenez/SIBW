@@ -1,0 +1,20 @@
+{% extends "Entrada.html" %}
+{% block Entrada %}
+<div class="Registrarse">
+   <h1>Registro</h1>
+   <form action="registrar.php" method="post">
+      Nombre de usuario: <input type="text" style="color: #000" name="Usuario"/><br><br>
+      Contraseña: <input type="password" style="color: #000" name="Contraseña"/><br><br>
+      Nombre: <input type="text" style="color: #000" name="Nombre"/><br><br>
+      Apellidos: <input type="text" style="color: #000" name="Apellidos"/><br><br>
+      Mail: <input type="text" style="color: #000" name="Mail"/><br><br>
+      Tipo: <select name="Tipo" id="Tipo">
+         <option value="Moderador">Moderador</option>
+         <option value="Registrado">Registrado</option>
+         <option value="Gestor">Gestor</option>
+         <option value="Superusuario">Superusuario</option>
+       </select>
+      <input type="submit" id="boton_comentarios" value="Registrarse"/>
+   </form>
+</div>
+{% endblock %}

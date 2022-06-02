@@ -1,0 +1,107 @@
+{% extends "Entrada.html" %}
+
+{% block Entrada %}
+<div class="contenido">
+   <!--Formulario edidicon-->
+
+   <a href="../producto.php?ev={{evento['ID']}} "><button>Volver</button></a>
+
+   <form class="edicion" action="/editarProducto.php" method="POST">
+      <div class="fila">
+         <div class="formulario">
+            <!--Etiqueta Nombre input-->
+            <h3><label for="nombre">Nombre</label><br></h3>
+            <input type="text" id="nombre" name="nuevonombre" value="{{ evento['Nombre'] }}"><br>
+         </div>
+         <div class="botones">
+            <!--Boton Cancelar-->
+            <input id="cambio" type="submit" name="cancelar" value="Cancelar" />
+            <!--Boton Guardar-->
+            <input type="hidden" name="IDevento" value="{{ evento['ID'] }}">
+            <input id="guardar" type="submit" name="guardarNombre" value="Guardar" />
+         </div>
+      </div>
+
+      <div class="fila">
+         <div class="formulario">
+            <!--Etiqueta Nombre input-->
+            <h3><label for="descripcion">Descripcion</label><br></h3>
+            <input type="text" id="descripcion" name="nuevaDescripcion" value="{{ evento['Descripcion'] }}"><br>
+         </div>
+         <div class="botones">
+            <!--Boton Cancelar-->
+            <input id="cambio" type="submit" name="cancelar" value="Cancelar" />
+            <!--Boton Guardar-->
+            <input type="hidden" name="IDevento" value="{{ evento['ID'] }}">
+            <input id="guardar" type="submit" name="guardarDescripcion" value="Guardar" />
+         </div>
+      </div>
+
+      <div class="fila">
+         <div class="formulario">
+            <!--Etiqueta Nombre input-->
+            <h3><label for="imagen1">Imagen1</label><br></h3>
+            <p>Src:<br></p>
+            <form class="nueva" action="/editarProducto.php" method="post">
+               <input type="text" id="nuevaImagen1" name="nuevaImagen1" value=""><br>
+               <input type="hidden" name="idevento" value="{{ evento['ID'] }}">
+            </form>
+         </div>
+         <div class="botones">
+            <!--Boton Cancelar-->
+            <input id="cambio" type="submit" name="cancelar" value="Cancelar" />
+            <!--Boton Guardar-->
+            <input type="hidden" name="IDevento" value="{{ evento['ID'] }}">
+            <input id="guardar" type="submit" name="guardarImagen1" value="Guardar" />
+         </div>
+      </div>
+      <div class="fila">
+         <div class="formulario">
+            <!--Etiqueta Nombre input-->
+            <h3><label for="imagen2">Imagen2</label><br></h3>
+            <p>Src:<br></p>
+            <form class="nueva" action="/editarProducto.php" method="post">
+               <input type="text" id="nuevaImagen2" name="nuevaImagen2" value=""><br>
+               <input type="hidden" name="idevento" value="{{ evento['ID'] }}">
+            </form>
+         </div>
+         <div class="botones">
+            <!--Boton Cancelar-->
+            <input id="cambio" type="submit" name="cancelar" value="Cancelar" />
+            <!--Boton Guardar-->
+            <input type="hidden" name="IDevento" value="{{ evento['ID'] }}">
+            <input id="guardar" type="submit" name="guardarImagen2" value="Guardar" />
+         </div>
+      </div>
+
+      <div class="fila">
+         <!--Manejar el estado publicado o no publicado-->
+         <label >Estado</label><br>
+         {% if evento['Publicado'] == 1  %}
+             <h1>PUBLICADO</h1>
+         {% else %}
+             <h1>NO PUBLICADO</h1>
+         {% endif %}                      
+         <form action="/editarProducto.php" method="post">
+             <input type="hidden" name="IDevento" value="{{ evento['ID'] }}">
+             {% if evento['Publicado'] == 0  %}
+                 <input id="publicarevento" type="submit" name="publicarevento" value="Publicar Evento" />
+             {% else %}
+                 <input id="ocultarevento" type="submit" name="ocultarevento" value="Ocultar Evento" />
+             {% endif %}
+         </form>
+     </div>
+     <div class="fila">
+      <div class="formulario">
+         <label>Nueva Etiqueta</label><br>
+         <form  class="nueva" action="/editarProducto.php" method="post">
+             <input type="text" id="nuevaEtiqueta" name="nuevaEtiqueta" value=""><br>
+             <input type="hidden" name="IDevento" value="{{ evento['ID'] }}">
+             <input id="aniadirEtiqueta" type="submit" name="aniadirEtiqueta" value="Añadir Etiqueta" />
+         </form>
+      </div>
+   </div>
+     
+   </form>
+</div>
+{% endblock %}
